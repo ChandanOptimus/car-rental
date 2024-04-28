@@ -8,45 +8,56 @@ import PopularCarSection from "../../molecules/PopularCarSection/PopularCarSecti
 import RecommendedSection from "../../molecules/RecommendedSection/RecommendedSection";
 import React, { useEffect } from "react";
 import { useCarStore } from "../../../store/store";
+import CarDetailsPage from "../CarDetailsPage/CarDetailsPage";
 
 const MainContent = () => {
   const setCarsStore = useCarStore((state: any) => state.setCarsData);
+  const selectedCarData = useCarStore((state: any) => state.selectedCarData);
 
   const buttonChildren = () => {
     return <ArrowDownUp width={20} height={20}></ArrowDownUp>;
   };
   const getAllCarDetails = async () => {
-    const response = await fetch("https://freetestapi.com/api/v1/cars");
+    const response = await fetch("http://localhost:5000/api/cars");
     const data = await response.json();
     setCarsStore("carsData", data);
-    console.log(data);
   };
   useEffect(() => {
     getAllCarDetails();
   }, []);
+  useEffect(() => {
+    console.log(selectedCarData);
+  }, [selectedCarData]);
 
   return (
     <div>
-      <div className="d-flex justify-content-between gap-4">
-        <AdvertisementCards
-          imageSrc={CarAd1}
-          bgColor="#54A6FF"
-          buttonBgColor="#3563E9"
-        ></AdvertisementCards>
-        <AdvertisementCards
-          imageSrc={CarAd2}
-          bgColor="#3563E9"
-          buttonBgColor="#54A6FF"
-        ></AdvertisementCards>
-      </div>
-      <div className="d-flex pt-4">
-        <div className="col-5">
+      {selectedCarData ? (
+        <div>
+          <CarDetailsPage></CarDetailsPage>
+        </div>
+      ) : (
+        <div className="d-grid d-lg-flex justify-content-lg-between gap-4">
+          <AdvertisementCards
+            imageSrc={CarAd1}
+            bgColor="#54A6FF"
+            buttonBgColor="#3563E9"
+          ></AdvertisementCards>
+          <AdvertisementCards
+            imageSrc={CarAd2}
+            bgColor="#3563E9"
+            buttonBgColor="#54A6FF"
+          ></AdvertisementCards>
+        </div>
+      )}
+
+      <div className="d-lg-flex d-grid row-gap-3 pt-4">
+        <div className="col-lg-5">
           <PickupDropForm title="Pick-Up" isPickup={true}></PickupDropForm>
         </div>
-        <div className="col-2 justify-content-center d-flex align-items-center">
+        <div className="col-lg-2 justify-content-center d-flex align-items-center">
           <Button children={buttonChildren()} height={60} width={60}></Button>
         </div>
-        <div className="col-5">
+        <div className="col-lg-5">
           <PickupDropForm title="Drop-Off" isPickup={false}></PickupDropForm>
         </div>
       </div>

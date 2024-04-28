@@ -1,19 +1,29 @@
-.header{
-    background-color: #FFFFFF;
-    height: 124px;
-    box-shadow: #00000025 0 4px 4px 0px;
+.header {
+  background-color: #ffffff;
+  height: 124px;
+  @media only screen and (max-width: 768px) {
+    height: 300px;
+  }
+  box-shadow: #00000025 0 4px 4px 0px;
 }
-.logo{
-    margin-top:-65px;
-    height: 100%;
-    overflow: hidden;
+.logo {
+  margin-top: -65px;
+  height: 100%;
+  @media only screen and (max-width: 768px) {
+    height: 200px;
+  }
+  overflow: hidden;
 }
-.icon-group{
-    width:236px;
+.icon-group {
+  width: 236px;
 }
-.right-icons{
-    height: 40px;
-    width: 40px;
-    border: #C3D4E9 solid 1px;
-    border-radius: 50%;
+.right-icons {
+  height: 40px;
+  width: 40px;
+  border: #c3d4e9 solid 1px;
+  border-radius: 50%;
+}
+
+.menu-section-mobile {
+  margin-top: -80px;
 }

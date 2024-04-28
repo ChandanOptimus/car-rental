@@ -24,7 +24,7 @@ const AdvertisementCards = (props: AdvertisementCardsTypes) => {
           color={buttonBgColor}
         ></Button>
       </div>
-      <div className="image-container d-flex justify-content-end">
+      <div className="image-container d-none d-lg-flex justify-content-end">
         <img src={imageSrc}></img>
       </div>
     </div>

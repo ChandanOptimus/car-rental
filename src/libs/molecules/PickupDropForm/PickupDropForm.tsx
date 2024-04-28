@@ -20,16 +20,25 @@ const PickupDropForm = (props: PickupDropFormType) => {
           <span className="form-title">{title}</span>
         </div>
         <div className="d-flex pt-2">
-          <div className="col-4 vertical-line">
-            <InputField label="Locations" placeholder="Select Your City"></InputField>
+          <div className="col-lg-4 vertical-line">
+            <InputField
+              label="Locations"
+              placeholder="Select Your City"
+            ></InputField>
           </div>
 
-          <div className="col-4 vertical-line">
-            <InputField label="Date" placeholder="Select Your Date"></InputField>
+          <div className="col-lg-4 vertical-line">
+            <InputField
+              label="Date"
+              placeholder="Select Your Date"
+            ></InputField>
           </div>
 
-          <div className="col-4">
-            <InputField label="Time" placeholder="Select Your Time"></InputField>
+          <div className="col-lg-4">
+            <InputField
+              label="Time"
+              placeholder="Select Your Time"
+            ></InputField>
           </div>
         </div>
       </form>

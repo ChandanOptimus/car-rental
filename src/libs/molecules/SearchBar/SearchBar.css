@@ -1,18 +1,51 @@
-.input{
-    border-radius:70px;
+.input {
+  outline: none;
+  border-radius: 70px;
+  width: 400px;
+  @media only screen and (min-width: 768px) {
     width: 492px;
-    height:44px;
-    border-color: #C3D4E9;
-    box-shadow: #C3D4E9 0 4px 4px 0;
-    border-width: 0;
+  }
+  height: 44px;
+  border-color: #c3d4e9;
+  box-shadow: #c3d4e9 0 4px 4px 0;
+  border-width: 0;
 }
-.search-icon{
-    position: relative;
-    left: -470px;
-    top: -3px;
+.search-icon {
+  position: relative;
+  left: -470px;
+  top: -3px;
+  @media only screen and (max-width: 767px) {
+    left: 20px;
+    top: -35px;
+  }
 }
-.filter-icon{
-    position: relative;
-    left: -50px;
-    top: -3px;
+.filter-icon {
+  position: relative;
+  left: -50px;
+  top: -3px;
+  @media only screen and (max-width: 767px) {
+    left: 350px;
+    top: -35px;
+  }
+}
+
+.suggestion-container {
+  width: 492px;
+  padding: 15px;
+  @media only screen and (max-width: 767px) {
+    width: 80vw;
+  }
+}
+.car-list-item {
+  font-size: 14px;
+  font-weight: 500;
+}
+.car-list-item-inner {
+  width: 100%;
+  padding: 7px;
+  border-radius: 5px;
+}
+.car-list-item-inner:hover {
+  background: #54a6ff;
+  color: white;
 }

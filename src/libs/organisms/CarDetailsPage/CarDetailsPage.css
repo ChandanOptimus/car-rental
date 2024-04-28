@@ -1,0 +1,15 @@
+.card-details-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 490px;
+  padding: 20px;
+}
+
+.car-details-sub-pics {
+  height: 128px;
+  background-color: white;
+  border-radius: 10px;
+  background-image: url("../../../images/gallery.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}

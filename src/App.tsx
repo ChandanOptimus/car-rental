@@ -21,7 +21,7 @@ function App() {
           <></>
         )}
 
-        <div className={clsx(isMenuOpen ? "col-10" : "col-12", "px-4")}>
+        <div className={clsx(isMenuOpen ? "col-10" : "col-12", "px-lg-4")}>
           <MainContent></MainContent>
         </div>
       </div>

@@ -1,0 +1,8 @@
+.dropdown-modal {
+  position: absolute;
+  border-radius: 10px;
+  background-color: #eff3fd;
+  @media only screen and (max-width: 767px) {
+    margin-top: -20px;
+  }
+}

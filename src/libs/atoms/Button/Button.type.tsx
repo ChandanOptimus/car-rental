@@ -1,7 +1,7 @@
 export interface ButtonType {
-    children: any;
-    onClick?: ()=>{}
-    height?: number;
-    width?: number;
-    color?: string;
+  children: any;
+  onClick?: () => void;
+  height?: number;
+  width?: number;
+  color?: string;
 }
