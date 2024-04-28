@@ -1,0 +1,18 @@
+.pickup-drop-form {
+  padding: 20px;
+  background-color: white;
+  height: 132px;
+  border-radius: 10px;
+}
+
+.form-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 10px;
+  top: 2px;
+  position: relative;
+}
+.vertical-line {
+    border-right: 1px solid #C3D4E9;
+    margin-right: 20px;
+}

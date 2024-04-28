@@ -1,0 +1,16 @@
+.filter-section {
+  background-color: white;
+  height: 100%;
+}
+
+.custom-checkbox {
+  height: 15px;
+  width: 15px;
+  accent-color: #3563e9;
+}
+
+.filter-category {
+  font-size: 12px;
+  font-weight: 500;
+  color: gray;
+}
