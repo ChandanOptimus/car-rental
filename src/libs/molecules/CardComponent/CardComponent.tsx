@@ -35,6 +35,7 @@ const CardComponent = (props: CardComponentTypes) => {
       seats: seats,
       carImage: carImage,
     });
+    window.scrollTo(0, 0);
   };
   return (
     <div className="card-component-container">

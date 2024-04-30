@@ -4,6 +4,12 @@ const initialState: any = {
   carsData: [],
   isMenuOpen: false,
   selectedCarData: undefined,
+  pickupLocation: "",
+  pickupDate: "",
+  pickupTime: "",
+  dropOfLocation: "",
+  dropOfDate: "",
+  dropOfTime: "",
   setCarsData: () => {},
 };
 const CarStore: any = (set: any) => {

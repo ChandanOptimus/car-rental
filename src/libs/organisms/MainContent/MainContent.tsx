@@ -13,6 +13,12 @@ import CarDetailsPage from "../CarDetailsPage/CarDetailsPage";
 const MainContent = () => {
   const setCarsStore = useCarStore((state: any) => state.setCarsData);
   const selectedCarData = useCarStore((state: any) => state.selectedCarData);
+  const pickupLocation = useCarStore((state: any) => state.pickupLocation);
+  const pickupDate = useCarStore((state: any) => state.pickupDate);
+  const pickupTime = useCarStore((state: any) => state.pickupTime);
+  const dropOfLocation = useCarStore((state: any) => state.dropOfLocation);
+  const dropOfDate = useCarStore((state: any) => state.dropOfDate);
+  const dropOfTime = useCarStore((state: any) => state.dropOfTime);
 
   const buttonChildren = () => {
     return <ArrowDownUp width={20} height={20}></ArrowDownUp>;
@@ -52,13 +58,61 @@ const MainContent = () => {
 
       <div className="d-lg-flex d-grid row-gap-3 pt-4">
         <div className="col-lg-5">
-          <PickupDropForm title="Pick-Up" isPickup={true}></PickupDropForm>
+          <PickupDropForm
+            title="Pick-Up"
+            isPickup={true}
+            location={pickupLocation}
+            date={pickupDate}
+            time={pickupTime}
+            onLocation={(value) => {
+              setCarsStore("pickupLocation", value);
+            }}
+            onDatesChange={(value) => {
+              setCarsStore("pickupDate", value);
+            }}
+            onTimeChange={(value) => {
+              setCarsStore("pickupTime", value);
+            }}
+          ></PickupDropForm>
         </div>
         <div className="col-lg-2 justify-content-center d-flex align-items-center">
-          <Button children={buttonChildren()} height={60} width={60}></Button>
+          <Button
+            onClick={() => {
+              const localDLoc = dropOfLocation;
+              const localDDate = dropOfDate;
+              const localDTime = dropOfTime;
+              const localPLoc = pickupLocation;
+              const localPDate = pickupDate;
+              const localPTime = pickupTime;
+              setCarsStore("pickupLocation", localDLoc);
+              setCarsStore("pickupDate", localDDate);
+              setCarsStore("pickupTime", localDTime);
+              setCarsStore("dropOfLocation", localPLoc);
+              setCarsStore("dropOfDate", localPDate);
+              setCarsStore("dropOfTime", localPTime);
+            }}
+            children={buttonChildren()}
+            height={60}
+            width={60}
+          ></Button>
         </div>
         <div className="col-lg-5">
-          <PickupDropForm title="Drop-Off" isPickup={false}></PickupDropForm>
+          <PickupDropForm
+            title="Drop-Off"
+            isPickup={false}
+            location={dropOfLocation}
+            date={dropOfDate}
+            time={dropOfTime}
+            onLocation={(value) => {
+              setCarsStore("dropOfLocation", value);
+            }}
+            onDatesChange={(value) => {
+              setCarsStore("dropOfDate", value);
+            }}
+            onTimeChange={(value) => {
+              setCarsStore("dropOfTime", value);
+            }}
+          ></PickupDropForm>
         </div>
       </div>
       <div className=" pt-4">

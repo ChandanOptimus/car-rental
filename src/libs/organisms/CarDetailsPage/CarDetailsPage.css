@@ -13,3 +13,29 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+.details-subtype {
+  font-weight: 500;
+  color: #90a3bf;
+}
+
+.details-value {
+  font-weight: 500;
+}
+
+.price-details-page {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.display-page_review {
+  height: 50px;
+}
+.display-page_summary {
+  height: 120px;
+  font-weight: 500;
+}
+
+.details-page-car-name {
+  font-weight: 500;
+  font-size: 30px;
+}
