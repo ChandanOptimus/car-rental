@@ -7,3 +7,7 @@
 .filter-section-container {
   margin-top: -22px;
 }
+.filter-section-mobile {
+  top: -30px;
+  position: relative;
+}

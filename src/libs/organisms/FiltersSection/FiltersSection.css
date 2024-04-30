@@ -1,6 +1,12 @@
 .filter-section {
   background-color: white;
   height: 100%;
+  @media only screen and (max-width: 767px) {
+    height: 300px;
+    margin-bottom: 20px;
+    overflow: scroll;
+    background-color: #eff3fd;
+  }
 }
 
 .custom-checkbox {

@@ -1,7 +1,7 @@
 .card-details-container {
   background-color: #ffffff;
   border-radius: 10px;
-  height: 490px;
+
   padding: 20px;
 }
 
@@ -32,6 +32,10 @@
 }
 .display-page_summary {
   height: 120px;
+
+  @media only screen and (max-width: 767px) {
+    height: auto;
+  }
   font-weight: 500;
 }
 

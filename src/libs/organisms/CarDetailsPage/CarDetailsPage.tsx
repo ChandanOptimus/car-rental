@@ -18,8 +18,8 @@ const CarDetailsPage = () => {
     carImage,
   } = selectedCarData;
   return (
-    <div className="row">
-      <div className="photo-section col-6 row row-gap-3">
+    <div className="d-lg-flex d-grid justify-content-between row-gap-3 row-gap-lg-0">
+      <div className="photo-section col-lg-6 row row-gap-3">
         <div>
           <AdvertisementCards
             bgColor="#3563E9"
@@ -35,7 +35,7 @@ const CarDetailsPage = () => {
           </div>
         </div>
       </div>
-      <div className="details-section col-6">
+      <div className="details-section col-lg-6">
         <div className="card-details-container">
           <div className="d-flex justify-content-between align-items-center">
             <div className="details-page-car-name">{carName}</div>

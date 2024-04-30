@@ -42,7 +42,7 @@ const MainContent = () => {
           <CarDetailsPage></CarDetailsPage>
         </div>
       ) : (
-        <div className="d-grid d-lg-flex justify-content-lg-between gap-4">
+        <div className="d-none d-lg-flex justify-content-lg-between gap-4">
           <AdvertisementCards
             imageSrc={CarAd1}
             bgColor="#54A6FF"
