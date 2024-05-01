@@ -27,7 +27,7 @@ const MainContent = () => {
     const response = await fetch(
       process.env.API_PREFIX
         ? process.env.API_PREFIX + "/api/cars"
-        : "http://localhost:5000/api/cars"
+        : "https://car-rental-h8hl.onrender.com/api/cars"
     );
     const data = await response.json();
     setCarsStore("carsData", data);

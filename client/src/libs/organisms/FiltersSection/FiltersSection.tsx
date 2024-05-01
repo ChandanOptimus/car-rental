@@ -11,7 +11,7 @@ const FiltersSection = () => {
     const response = await fetch(
       process.env.API_PREFIX
         ? process.env.API_PREFIX + "/api/cars/allFilters"
-        : "http://localhost:5000/api/cars/allFilters"
+        : "https://car-rental-h8hl.onrender.com/api/cars/allFilters"
     );
     const data = await response.json();
     setFilterData(data);
@@ -21,7 +21,8 @@ const FiltersSection = () => {
     const response = await fetch(
       process.env.API_PREFIX
         ? process.env.API_PREFIX + "/api/cars?make="
-        : "http://localhost:5000/api/cars?make=" + encodeURIComponent(name)
+        : "https://car-rental-h8hl.onrender.com/api/cars?make=" +
+            encodeURIComponent(name)
     );
     const data = await response.json();
     setCarsStore("carsData", data);
