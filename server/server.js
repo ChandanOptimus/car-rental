@@ -12,7 +12,7 @@ app.use(cors());
 // app.get("/", (req, res) => res.send("API Running"));
 
 //Define routes
-app.use(process.env.API_PREFIX + "/", require("./routes/api/car"));
+app.use(process.env.API_PREFIX ?? "/", require("./routes/api/car"));
 
 //Serve static assets in production
 if (process.env.NODE_ENV === "production") {
