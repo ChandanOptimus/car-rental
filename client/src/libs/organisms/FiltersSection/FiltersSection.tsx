@@ -8,14 +8,20 @@ const FiltersSection = () => {
   const [filterData, setFilterData]: any = useState([]);
 
   const getFilters = async () => {
-    const response = await fetch("http://localhost:5000/api/cars/allFilters");
+    const response = await fetch(
+      process.env.API_PREFIX
+        ? process.env.API_PREFIX + "/api/cars/allFilters"
+        : "http://localhost:5000/api/cars/allFilters"
+    );
     const data = await response.json();
     setFilterData(data);
   };
 
   const getFilteredData = async (name: string) => {
     const response = await fetch(
-      "http://localhost:5000/api/cars?make=" + encodeURIComponent(name)
+      process.env.API_PREFIX
+        ? process.env.API_PREFIX + "/api/cars?make="
+        : "http://localhost:5000/api/cars?make=" + encodeURIComponent(name)
     );
     const data = await response.json();
     setCarsStore("carsData", data);

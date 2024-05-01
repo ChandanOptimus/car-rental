@@ -16,7 +16,10 @@ const SearchBar = () => {
 
   const getSearchResults = async (name: string) => {
     const response = await fetch(
-      "http://localhost:5000/api/cars/search?make=" + encodeURIComponent(name)
+      process.env.API_PREFIX
+        ? process.env.API_PREFIX + "/api/cars/search?make="
+        : "http://localhost:5000/api/cars/search?make=" +
+            encodeURIComponent(name)
     );
     const data = await response.json();
     setSearchResult(data);
