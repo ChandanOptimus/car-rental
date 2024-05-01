@@ -14,7 +14,7 @@ const Header = () => {
       <div className="col-lg-3 logo justify-content-center d-flex d-lg-block">
         <a
           href={
-            process.env.API_PREFIX ?? "https://car-rental-h8hl.onrender.com/"
+            process.env.API_PREFIX ?? "https://car-rental-1-jqls.onrender.com/"
           }
         >
           <img src={logo}></img>
