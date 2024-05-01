@@ -66,7 +66,7 @@ const MainContent = () => {
             title="Pick-Up"
             isPickup={true}
             location={pickupLocation}
-            date={pickupDate}
+            date={pickupDate ?? new Date()}
             time={pickupTime}
             onLocation={(value) => {
               setCarsStore("pickupLocation", value);
@@ -105,7 +105,7 @@ const MainContent = () => {
             title="Drop-Off"
             isPickup={false}
             location={dropOfLocation}
-            date={dropOfDate}
+            date={dropOfDate ?? new Date()}
             time={dropOfTime}
             onLocation={(value) => {
               setCarsStore("dropOfLocation", value);

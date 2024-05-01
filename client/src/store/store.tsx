@@ -5,10 +5,10 @@ const initialState: any = {
   isMenuOpen: false,
   selectedCarData: undefined,
   pickupLocation: "",
-  pickupDate: "",
+  pickupDate: new Date(),
   pickupTime: "",
   dropOfLocation: "",
-  dropOfDate: "",
+  dropOfDate: new Date(),
   dropOfTime: "",
   setCarsData: () => {},
 };
