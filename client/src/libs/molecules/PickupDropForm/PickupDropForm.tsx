@@ -1,9 +1,14 @@
-import InputField from "../../atoms/InputField/InputField";
 import "./PickupDropForm.css";
 import { Geo, GeoFill } from "react-bootstrap-icons";
 import { PickupDropFormType } from "./PickupDropForm.types";
 import { useCarStore } from "../../../store/store";
-import { DatePicker, Lookup, TimePicker } from "react-rainbow-components";
+import {
+  DatePicker,
+  Option,
+  Picklist,
+  TimePicker,
+} from "react-rainbow-components";
+import { useEffect } from "react";
 
 const PickupDropForm = (props: PickupDropFormType) => {
   const {
@@ -31,6 +36,10 @@ const PickupDropForm = (props: PickupDropFormType) => {
     { label: "Sao Paulo" },
     { label: "Toronto" },
   ];
+  useEffect(() => {
+    const dropdown = document.getElementById("lookup-listbox-5")?.classList;
+    console.log(dropdown);
+  }, []);
 
   return (
     <div className="pickup-drop-form">
@@ -49,53 +58,34 @@ const PickupDropForm = (props: PickupDropFormType) => {
         </div>
         <div className="d-flex pt-2">
           <div className="col-lg-4 vertical-line">
-            {/* <InputField
-              label="Locations"
-              placeholder="Select Your City"
-              value={location}
-              onChange={onLocation}
-            ></InputField> */}
-            <Lookup
-              id="lookup-1"
-              label="Locations"
-              placeholder="Find"
-              options={data}
-              {...(location ? { value: { label: location } } : {})}
-              // value={location ? { label: location } : {}}
+            <Picklist
+              id="picklist-1"
               onChange={(value) => {
                 onLocation?.(value?.label);
               }}
-              // onSearch={search}
+              {...(location ? { value: { label: location } } : {})}
+              label="Locations"
               className="location-component  d-block"
-            />
+            >
+              {data?.map((items: any) => {
+                return <Option name="header" label={items.label} />;
+              })}
+            </Picklist>
           </div>
 
           <div className="col-lg-4 vertical-line">
-            {/* <InputField
-              label="Date"
-              placeholder="Select Your Date"
-              value={date}
-              onChange={onDatesChange}
-            ></InputField> */}
             <DatePicker
               formatStyle="medium"
               id="datePicker-1"
               value={date}
               onChange={onDatesChange}
               label="Date"
-              // formatStyle="large"
               locale={"en-US"}
               className="date-component d-block"
             />
           </div>
 
           <div className="col-lg-4">
-            {/* <InputField
-              label="Time"
-              placeholder="Select Your Time"
-              value={time}
-              onChange={onTimeChange}
-            ></InputField> */}
             <TimePicker
               label="Time"
               id="time-picker-1"
