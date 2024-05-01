@@ -18,7 +18,7 @@ const SearchBar = () => {
     const response = await fetch(
       process.env.API_PREFIX
         ? process.env.API_PREFIX + "/api/cars/search?make="
-        : "http://localhost:5000/api/cars/search?make=" +
+        : "https://car-rental-h8hl.onrender.com/api/cars/search?make=" +
             encodeURIComponent(name)
     );
     const data = await response.json();

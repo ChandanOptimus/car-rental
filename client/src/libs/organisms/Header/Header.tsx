@@ -12,7 +12,11 @@ const Header = () => {
   return (
     <div className="col-12 d-grid d-lg-flex header align-items-center p-4 p-lg-0 justify-content-center">
       <div className="col-lg-3 logo justify-content-center d-flex d-lg-block">
-        <a href={process.env.API_PREFIX ?? "http://localhost:3000/"}>
+        <a
+          href={
+            process.env.API_PREFIX ?? "https://car-rental-h8hl.onrender.com/"
+          }
+        >
           <img src={logo}></img>
         </a>
       </div>
